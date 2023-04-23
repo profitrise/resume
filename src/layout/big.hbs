@@ -12,35 +12,17 @@
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
   </head>
-
+   
   <body>
-    {{#with header}}
-    <header>
-      <div>
-        <h1>{{name.firstname}} {{lastname}}</h1>
-      </div>
-      <div>
-        <b>{{name.position}}</b>
-      </div>
-      <br />
-      <div>
-        <em>{{salary.text}}</em>
-       </div>
-       <br />
-       <div>
-        <address>{{address.text}}</address>
-        </div>
-      <br />
-      <hr />
-    </header>
-    {{/with}}
-
-    {{> nav}}
-
+      {{> nav}}
+   <hr />
+    <br /> 
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
     {{{body}}}
+     
+     <br />
 
-{{> footer social=footer.social firstname=footer.firstname lastname=footer.lastname address=footer.address}}
+ {{> footer social=footer.social firstname=footer.firstname lastname=footer.lastname address=footer.address}}
   </body> 
 
 </html>
