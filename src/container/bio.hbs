@@ -1,0 +1,97 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+<section>
+  {{> title data="Albert Einstein"}}
+  <p><b>Name:</b> {{name}}</p>
+  <p><b>Birthdate:</b> {{birthdate}}</p>
+  <p><b>Birthplace:</b> {{birthplace}}</p>
+  <p><b>Deathdate:</b>{{deathdate}}</p>
+  <p><b>Deathplace:</b>{{deathplace}}</p>
+  <p><b>Nationality:</b> {{nationality}}</p>
+   <p><b>Occupation:</b>{{occupation}}</p>
+<p><ul>
+  {{#each known_for}}
+    <li>{{this}}</li>
+     {{/each}}
+</ul></p>
+
+  <div>
+    {{#each education}}
+    <p><b>Degree:</b>{{degree}}</p>
+    <p><b>Field</b>{{field}}</p>
+    <p> <b>Institution:</b>{{institution}}</p>
+    <p><b>Year:</b>{{year}}</p>
+    {{/each}}
+  </div>
+  <div>
+    <ul>
+      <strong>Notable publications:</strong>{{#each notable_publications}}
+        <li>"{{title}}" ({{year}}) {{publisher}}</li>
+       {{/each}}</ul>
+  </div>
+  <div>
+    <p>{{> title data="Partners"}}</p>
+    <ul>
+      {{#each partners}}
+        <li>{{name}} relationship: {{relationship}} ({{years}})</li>
+        {{/each}}
+    </ul>
+  </div>
+  <div>
+    <p>{{> title data="Awards"}}</p>
+    <ul>
+      {{#each awards}}
+        <li>{{title}} Description: {{description}} ({{year}})</li>
+        {{/each}}
+    </ul>
+  </div>
+  <br>
+  <div>
+    <ol>
+      <p><b>Influences:</b></p>
+          {{#each influences}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ol>
+    <br>
+     <ol>
+      <p><b>Influenced:</b></p>
+          {{#each influenced}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ol>
+    <br>
+      <ol>
+      <p><b>Quotes:</b></p>
+          {{#each quotes}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ol>
+  </div>
+  <div>
+    <p>{{> title data="Major discoveries"}}</p>
+    <p>{{#each major_discoveries}}
+      <b>Title: </b>{{title}} ({{year}}) Description: {{description}}
+      {{/each}}</p>
+  </div>
+  <br>
+   <div>
+    <p>{{> title data="Contributions"}}</p>
+    <p>{{#with contributions}}
+      <p><b>Title: </b>{{title}}</p>
+       <p><b>Year:</b>{{year}}</p> 
+       <p><b>Description:</b> {{description}}</p>
+        <b>Field:</b> {{field}}
+      {{/with}}</p>
+  </div>
+</section>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
