@@ -6,21 +6,57 @@
 <h1>{{> title data="WEB"}}</h1>
 {{#with web}}
 {{#each languages}}
-<p>Name: {{name}} {{version}} {{description}}</p>
-<p>{{#each elements}}
-  <p>Name:{{name}} {{description}} </p>
-  {{#each attributes}}
-  {{name}} {{description}}
-  {{/each}}
-    {{/each}}
-</p>
+<p><b>Name languages: </b>{{name}} <b>version:</b>{{version}} {{description}}</p>
 <div>
+  
+  <h3><b>Elements:</b></h3>
+  {{#each elements}}
+    {{#if elements}}
+    <ul>
+      <li><b>Name elements:</b>{{name}} {{description}} {{attributes}}</li>
+      <b>attributes</b>
+      {{/if}}
+     
+    <div>
+      {{#each attributes}}
+      {{#if attributes}}
+      <li>Name attributes{{name}}</li>
+      <li>{{description}}</li>
+      {{/if}}
+      {{/each}}
+    </div>
+  </ul>
+    {{/each}}
+    
+</div>
+<div>
+ 
+  <h3><b>Properties:</b></h3>
   {{#each properties}}
-  <p>{{name}} {{description}}</p>
+ 
+  {{name}} 
+   <p>{{description}}</p>
+   
   {{#each values}}
-  <p> {{value}} {{description}}</p>
+    <p> <b>Value:</b>{{value}} {{description}}</p>
     {{/each}}
     {{/each}}
+    
+</div>
+<div>
+  <ul>
+    {{#if functions}}
+    <b>Functions</b>
+    {{#each functions}}
+    <li>Name:{{name}}<b>Description:</b>{{description}}</li>
+    {{#each parameters}}
+    <li>{{name}}</li>
+    <li>{{type}}</li>
+    <li>{{description}}</li>
+    {{/each}}
+    {{/each}}
+    {{/if}}
+  </ul>
 </div>
 {{/each}}
 {{/with}}
