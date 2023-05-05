@@ -279,7 +279,6 @@ router.get('/work', function (req, res) {
 })
 // ================================================================
 
-
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -535,8 +534,9 @@ router.get('/task31', function (req, res) {
       ],
     },
   })
-  //                  ↑↑ сюди вводимо JSON дані
-=======
+})
+//                  ↑↑ сюди вводимо JSON дані
+
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -614,8 +614,9 @@ router.get('/js', function (req, res) {
       },
     ],
   })
-  //                  ↑↑ сюди вводимо JSON дані
-=======
+})
+//                  ↑↑ сюди вводимо JSON дані
+
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
@@ -734,7 +735,15 @@ router.get('/web', function (req, res) {
                   type: 'string',
                   description:
                     'The ID of the element to find.',
-=======
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  })
+})
 //              ↙ тут вводимо шлях (PATH) до сторінки
 
 router.get('/bio', function (req, res) {
@@ -828,7 +837,11 @@ router.get('/bio', function (req, res) {
         'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
       year: 'Late 15th to early 16th century',
       field: 'Invention',
-=======
+    },
+  })
+})
+
+//          ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
@@ -917,18 +930,17 @@ router.get('/person', function (req, res) {
                       ],
                     },
                   ],
-
                 },
               ],
             },
           ],
         },
       ],
-
     },
   })
 })
 
 // ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router
