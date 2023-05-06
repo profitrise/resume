@@ -397,7 +397,15 @@ router.get('/web', function (req, res) {
                   type: 'string',
                   description:
                     'The ID of the element to find.',
-=======
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  })
+})
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -487,7 +495,6 @@ router.get('/person', function (req, res) {
                       ],
                     },
                   ],
-
                 },
               ],
             },
