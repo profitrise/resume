@@ -1,0 +1,110 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+
+  {{#with page_header}}
+    <h1>
+      <p class='text-center'>{{title}}</p>
+    </h1>
+    <p
+      class='text-uppercase text-center'
+    >{{description}}</p>
+  {{/with}}
+  <div class='card'>
+    <div class='card-body'>
+
+      {{#with section}}
+        {{#with about_us}}
+          {{#with title_list}}
+
+            <p class='display-6 text-end'>{{main}}</p>
+            <h2>
+              <p class='text-end'>{{sub}}</p>
+            </h2>
+          {{/with}}
+          <div
+            class='btn btn-outline-info'
+          >{{button.text}}</div>
+        {{/with}}
+         </div>
+         </div>
+         <br>
+
+        <div class='card'>
+          <div class='card-body'>
+            {{#with advantage}}
+            <p class="display-5">{{title}}</p>
+            <div class="card">
+              <div class="card-body">
+                {{#with efficiency}}
+                <p class="display-4">{{title}}</p>
+               <h6>{{sub_title}}</h6>
+               <p class="text-secondary">{{description}}</p>
+               <div class="btn btn-outline-warning">{{button}}</div>
+                {{/with}}
+              </div>
+            </div>
+            <br>
+            <div class="card">
+              <div class="card-body">
+                {{#with innovation}}
+                <p class="display-4 text-center">{{title}}</p>
+                <h6>
+                  <p class="text-center">{{sub_title}}</p>
+                </h6>
+                   <p class="text-center">{{description}}</p>
+                   <div class="btn btn-outline-warning">{{button}}</div>
+                   {{/with}}
+              </div>
+            </div>
+            <br>
+            <div class="card">
+              <div class="card-body">
+                {{#with collaboration}}
+                  <p class="display-4 text-end">{{title}}</p>
+                <h6>
+                  <p class="text-end">{{sub_title}}</p>
+                </h6>
+                <p class="text-end">{{description}}</p>
+                <div class="btn btn-outline-warning">{{button}}</div>
+                {{/with}}
+              </div>
+            </div>
+            {{/with}}
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <div class="card-body">
+            {{#with agreement}}
+            <p class="display-5">{{title}}</p>
+            <div class="card">
+              <div class="card-body">
+                {{#with info}}
+                <h5>
+                  <p class="text">{{sub_title}}</p>
+                </h5>
+                <div class="card">
+                  <div class="card-body">
+                    {{#with detail}}
+                    <p>{{text}}</p>
+                    <div class="btn btn-success">{{button}}</div>
+                    {{/with}}
+                  </div>
+                </div>
+                {{/with}}
+              </div>
+            </div>
+            {{/with}}
+          </div>
+        </div>
+      {{/with}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
