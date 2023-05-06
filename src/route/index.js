@@ -571,8 +571,6 @@ router.get('/js', function (req, res) {
     })
   })
 })
-})
-
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
 
