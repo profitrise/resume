@@ -282,6 +282,79 @@ router.get('/work', function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/task21', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task21', {
+    layout: 'layout basic',
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
+      },
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
+      },
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
+
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
+        {
+          text: 'Github',
+          url: 'https://github.com/',
+        },
+        {
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
+        },
+      ],
+    },
+  })
+})
+//                  ↑↑ сюди вводимо JSON дані
+=======
+
+// router.get Створює нам один ентпоїнт
+
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -465,7 +538,6 @@ router.get('/program', function (req, res) {
   })
 })
 
-
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -543,11 +615,12 @@ router.get('/js', function (req, res) {
       },
     ],
   })
+})
+//                  ↑↑ сюди вводимо JSON дані
 
 
-  //                  ↑↑ сюди вводимо JSON дані
 
-  router.get('/web', function (req, res) {
+   router.get('/web', function (req, res) {
     //             ↙ cюди вводимо назву файлу з сontainer
     res.render('web', {
       layout: 'layout basic',
@@ -680,6 +753,7 @@ router.get('/js', function (req, res) {
 
 router.get('/person', function (req, res) {
 
+
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
     layout: 'person',
@@ -772,7 +846,7 @@ router.get('/person', function (req, res) {
             },
           ],
         },
-      ],
+     ],
     },
   })
 })
@@ -873,96 +947,6 @@ router.get('/bio', function (req, res) {
   })
 })
 
-
-// ================================================================
-
-router.get('/program', function (req, res) {
-
-  //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('program', {
-    layout: 'program',
-    program: {
-      excursion: {
-        name: 'Cultural Tour',
-        location: {
-          city: 'Paris',
-          country: 'France',
-        },
-        date: '2023-06-15',
-        program: [
-          {
-            name: 'Museum Visit',
-            type: 'Art',
-            duration: 3,
-            details: {
-              museum: {
-                name: 'The Louvre',
-                location: {
-                  address: 'Rue de Rivoli',
-                  city: 'Paris',
-                  country: 'France',
-                },
-                exhibits: [
-                  {
-                    name: 'Mona Lisa',
-                    artist: 'Leonardo da Vinci',
-                    description: 'Iconic portrait painting',
-                    audio_guide: true,
-                  },
-                  {
-                    name: 'Winged Victory of Samothrace',
-                    artist: null,
-                    description:
-                      'Ancient Greek statue of Nike, the goddess of victory',
-                    audio_guide: true,
-                  },
-                ],
-              },
-              guide: {
-                name: 'Francois',
-                language: 'French',
-                rating: 4.8,
-              },
-            },
-          },
-          {
-            name: 'Cultural Show',
-            type: 'Music and Dance',
-            duration: 2,
-            details: {
-              venue: {
-                name: 'Moulin Rouge',
-                location: {
-                  address: '82 Boulevard de Clichy',
-                  city: 'Paris',
-                  country: 'France',
-                },
-              },
-              performers: [
-                {
-
-                  name: 'Mireille Mathieu',
-                  type: 'Chanson singer',
-                },
-                {
-                  name: "Ballet de l'Opéra National de Paris",
-                  type: 'Classical ballet company',
-                },
-              ],
-              guide: {
-                name: 'Sophie',
-                language: 'English',
-                rating: 4.6,
-              },
-            },
-          },
-        ],
-      },
-    },
-  })
-})
-
-// ================================================================
 
 // ================================================================
 // Підключаємо роутер до бек-енду
