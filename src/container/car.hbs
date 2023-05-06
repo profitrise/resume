@@ -1,0 +1,113 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+<div>
+<h1>{{> title data="Car"}}</h1>
+<div>Model auto:{{make}} {{model}} {{year}} {{color}}</div>
+<div>{{#with features}}
+    <ul>
+        {{#with interior}}
+        {{#with seats}}
+        <li>{{material}} {{color}}</li>
+        <li>{{#if heated}} yes {{/if}}</li>
+        <li>{{#if ventilated}} yes {{else}} {{/if}}</li>
+        {{/with}}
+         {{#with dashboard}}
+         <li>{{material}} {{color}}</li>
+         {{#with display}}
+         <li>{{type}} {{size}} resolution:{{resolution}}</li>
+         <li>{{#if touchscreen}} yes {{/if}}</li>
+         {{/with}}
+         {{/with}}
+         <div>
+    {{#with audio}}
+    <h3>Audio system</h3>
+    <li>{{system}}</li>
+    <li>{{speakers}}</li>
+    <li>{{#if subwoofer}} yes {{/if}}</li>
+    <li>{{#if bluetooth}} yes {{/if}}</li>
+    <li>{{#if USB}} yes {{/if}}</li>
+    {{/with}}
+</div>
+         {{/with}}
+        </ul>
+        <div>
+    <ul>
+        <h3>Exterior</h3>
+        {{#with exterior}}
+        {{#with wheels}}
+        <li>{{size}} {{type}} {{color}}</li>
+        {{/with}}
+        {{#with headlights}}
+        <li>{{type}}</li>
+        <li>{{brightness}}</li>
+        <li><b>Automatic:</b>{{#if automatic}} yes {{/if}}</li>
+        {{/with}}
+        {{#with sunroof}}
+        <li><b>Type:</b> {{type}} <b>Size:</b>{{size}} <b>Automatic:</b> {{#if automatic}} yes {{/if}}</li>
+         {{/with}}
+        {{/with}}
+    </ul>
+ </div>
+ <div>
+    <h4>Safety</h4>
+    {{#with safety}}
+    {{#with airbags}}
+    <p>Front:{{front}} side:{{side}} Knee:{{knee}} rear:{{rear}}</p>
+    {{/with}}
+    <div>
+        <h4>Assistance</h4>
+        <ul>
+          {{#with assistance}}
+        <li>Blind spot monitoring:{{#if blind_spot_monitoring}} в наявності {{/if}}</li>
+         <li>Rear cross traffic alert:{{#if rear_cross_traffic_alert}} в наявності {{/if}}</li>
+          <li>Lane departure warning:{{#if lane_departure_warning}} в наявності {{/if}}</li>
+           <li>Adaptive cruise control:{{#if adaptive_cruise_control}} в наявності {{/if}}</li>
+            <li>Collision warning:{{#if collision_warning}} в наявності {{/if}}</li>
+        {{/with}}
+    </ul>
+ </div>
+    {{/with}}
+ </div>
+     {{/with}}
+     <div>
+        <h4>Engine</h4>
+        <ul>
+            {{#with engine}}
+            <li>{{type}}</li>
+            <li>{{displacement}}</li>
+            <li>horsepower: {{horsepower}}</li>
+            <li>{{torque}}</li>
+            <li>Transmission: {{#with transmission}} {{type}} {{gears}} {{/with}}</li>
+            {{/with}}
+        </ul>
+     </div>
+     <div>
+        <h4>Fuel economy</h4>
+        {{#with fuel_economy}}
+        <p><b>city:</b>{{city}} <b>highway:</b>{{highway}} <b>combined:</b>{{combined}}</p>
+        {{/with}}
+     </div>
+     <di>
+        <ul>
+            <h4>Price</h4>
+            {{#with price}}
+            <li><b>Price base:</b>{{base}}</li>
+            <li><b>Price destination:</b>{{destination}}</li>
+            <p>{{#with options}}</p>
+            <p><b>Navigation:</b>{{navigation}}</p>
+            <p><b>Moonroof: </b>{{moonroof}}</p>
+            <p><b>Premium paint:</b>{{premium_paint}}</p>
+             {{/with}}
+          <li><em>Total price:</em>{{total}}</li>
+            {{/with}}
+         </ul>
+     </di>
+     </div>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
