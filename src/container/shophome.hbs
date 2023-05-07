@@ -1,0 +1,190 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+      <div class='card'>
+      <div class='nav'>
+        {{#with navigation}}
+          {{#each links}}
+            <div class='nav-item'>
+              <a
+                href='{{href}}'
+                class='nav-link'
+              >{{text}}</a>
+            </div>
+          {{/each}}
+          <div class="nav-item pt-2 ps-3"><a href="#" class="nav-item-disabled">Disabled</a></div>
+        {{/with}}
+      </div>
+    </div>
+  <div class='row g-1'>
+    {{#with newsBlock}}
+       <p class="h3 text-center">{{title}}</p>
+        {{#each cards}}
+          <div class='col-3'>
+            <div class='card text-bg-dark'>
+               <div class='card-header'>{{title}}
+               
+               {{#if isTop includeZero=true}}
+                  <span class="badge text-bg-danger">TOP</span>
+                {{/if}}                
+                {{#if isNew includeZero=true}}
+                  <span class="badge text-bg-success">NEW</span>
+                {{/if}} 
+               </div>
+                  <div class="card-body"> 
+                    <p class="text-center">{{description}}</p>
+                  </div>
+               </div>
+            </div>
+         {{/each}}
+      {{/with}}
+    </div>
+  </div>
+    <hr />
+    <section>
+      {{#with goodsBlock}}   
+      <div class="row g-2">
+        <div class="col-12">
+          <div class="nav">
+            <ul class="nav nav-tabs">
+              {{#each tabs}}
+            <li class="nav-link {{#if isActive}} active {{/if}} {{#if isDisabled}} disabled {{/if}}">
+                 {{text}}
+              </li>
+            </ul>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        <br>
+      <div class="row">
+           {{#each cards}}
+         <div class="col-4">
+            <div class="card">
+              <img class="card-img-top" src="{{image}}"/>
+                 <div class="card-title p-3 ps-3">{{title}}
+                   {{#if isHot includeZero=true}}
+                  <span class="badge text-bg-warning">HOT</span>
+                {{/if}}                
+                {{#if isNew includeZero=true}}
+                  <span class="badge text-bg-info">NEW</span>
+                {{/if}} 
+                 </div>
+                    <div class="card-body ">{{description}}
+                  </div>
+                  </div>
+                </div>
+                {{/each}}
+             </div>
+            {{/with}}
+    </section>
+    <hr class="m-4"/>
+    <section>
+      {{#with subscribe}}
+      <div class="row g-2">
+        <div class="card text-bg-dark">
+          <div class="col-12">
+            <p class="h2 p-2">{{header}}</p>
+            <p class="text p-2">{{description}}</p>
+            {{#each buttons}}
+            <div class="col-3 p-1">
+              <a href="{{link}}" class="btn btn-info">{{text}}</a>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      {{/with}}
+    </section>
+    <hr class="m-4"/>
+    <section>
+       {{#with service}}
+      <div class="row g-2">
+        <div class="card text-bg-success">
+          <div class="col-12">
+            <p class="h2 p-2 text-center">{{title}}</p>
+            <p class="text text-center">{{description}}</p>
+            {{#each buttons}}
+            <div class="text-center p-3">
+              <a href="{{link}}" class="btn btn-info">{{text}}</a>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      {{/with}}
+    </section>
+    <hr class="m-4"/>
+<footer>
+  <div class="row g-5">
+    {{#each footer}}
+    <div class="nav col-2">
+      <div>
+        {{#each this}}
+        <div>
+          <a class="nav-link {{#if @last}} disabled {{/if}}" href="{{this.link}}">{{this.text}}</a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</footer>
+  {{!-- <div class="row">
+    {{#each footer.[0]}}
+    <div class="col-3">
+      <div class="nav">
+            <div class="nav-item">
+              <a class="nav-link" href="{{link}}">{{text}}</a>
+        </div>
+        </div>
+    </div>
+      {{/each}}
+       {{#each footer.[1]}}
+    <div class="col-3">
+      <div class="nav">
+            <div class="nav-item">
+              <a class="nav-link" href="{{link}}">{{text}}</a>
+        </div>
+        </div>
+    </div>
+      {{/each}}
+      {{#each footer.[2]}}
+    <div class="col-3">
+      <div class="nav">
+            <div class="nav-item">
+              <a class="nav-link" href="{{link}}">{{text}}</a>
+        </div>
+        </div>
+    </div>
+      {{/each}}
+      {{#each footer.[3]}}
+    <div class="col-3">
+      <div class="nav">
+            <div class="nav-item">
+              <a class="nav-link" href="{{link}}">{{text}}</a>
+        </div>
+        </div>
+    </div>
+      {{/each}}
+      {{#each footer.[4]}}
+    <div class="col-3">
+      <div class="nav">
+            <div class="nav-item-disabled">
+              <a class="nav-link" href="{{link}}">{{text}}</a>
+        </div>
+        </div>
+    </div>
+      {{/each}}
+      
+  </div> --}}
+
+</main>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
