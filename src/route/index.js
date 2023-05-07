@@ -533,6 +533,9 @@ router.get('/task31', function (req, res) {
           link: 'https://www.starkindustries.com/',
         },
       ],
+    },
+  })
+})
 
 router.get('/task21', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -766,7 +769,6 @@ router.get('/car', function (req, res) {
   })
 })
 //                  ↑↑ сюди вводимо JSON дані
-
 
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -1159,7 +1161,6 @@ router.get('/bio', function (req, res) {
 
 //          ↙ тут вводимо шлях (PATH) до сторінки
 
-
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
@@ -1258,10 +1259,7 @@ router.get('/person', function (req, res) {
   })
 })
 
-
-
 // ================================================================
-
 
 // router.get Створює нам один ентпоїнт
 
