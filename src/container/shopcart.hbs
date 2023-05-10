@@ -119,9 +119,45 @@
       {{/each}}
     {{/with}}
     </div>
-
   </div>
-
+</div>
+<div class="row ms-5">
+  <div class="col-12 mt-5 mb-5">
+    <hr class="m-4" /> 
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+      <div class="card-body">
+<p class="h2">{{header}}</p>
+<p>{{description}}</p>
+{{#each buttons}}
+<div class="col-4 m-3"><button class="btn btn-info" href="{{link}}">{{text}}</button></div>
+{{/each}}
+      </div>
+    </div>
+    {{/with}}
+    <hr class="m-4" /> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-10">
+    <div class="row ms-5">
+      <div class="nav">
+        {{#each footer}}
+        {{#each this}}        
+          <div class="col-2">
+            <div>
+              <div class="nav-item">
+                <a href="{{link}}" class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
+              </div>
+            </div>  
+           </div>
+      {{/each}}
+      {{/each}}
+      </div>
+      <hr class="m-4" /> 
+    </div>
+  </div>
+  
 </div>
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
