@@ -44,7 +44,75 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    page: [
+      {
+        title: 'Resume | Summary',
+        link: '/summary',
+      },
+      {
+        title: 'Resume | Program',
+        link: '/program',
+      },
+      {
+        title: 'Resume | Work',
+        link: '/work',
+      },
+      {
+        title: 'Resume | Js',
+        link: '/js',
+      },
+      {
+        title: 'Resume | Person',
+        link: '/person',
+      },
+      {
+        title: 'Resume | Web',
+        link: '/web',
+      },
+      {
+        title: 'Resume | Task21',
+        link: '/task21',
+      },
+      {
+        title: 'Resume | Task22',
+        link: '/task22',
+      },
+      {
+        title: 'Resume | Task31',
+        link: '/task31',
+      },
+      {
+        title: 'Resume | Bio',
+        link: '/bio',
+      },
+      {
+        title: 'Resume | Skills',
+        link: '/skills',
+      },
+      {
+        title: 'Resume | Car',
+        link: '/car',
+      },
+      {
+        title: 'Resume | Shoporder',
+        link: '/shoporder',
+      },
+      {
+        title: 'Resume | Shophome',
+        link: '/shophome',
+      },
+      {
+        title: 'Resume | Shopreview',
+        link: '/shopreview',
+      },
+      {
+        title: 'Resume | Shopocart',
+        link: '/shopcart',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
