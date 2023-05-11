@@ -1,0 +1,164 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div class='row m-2 ms-3'>
+  <div class='col-12 m-2'>
+    {{#with navigation}}
+      <div class='card'>
+        <div class='nav'>
+          {{#each links}}
+            <div class='nav-item'>
+              <a
+                class='nav-link'
+                href='{{href}}'
+              >{{text}}</a>
+            </div>
+          {{/each}}
+          <div class='nav-item-disabled pt-2 ps-3'
+            >Disabled</a></div>
+        </div>
+      </div>
+    {{/with}}
+  </div>
+</div>
+<div class="row m-2 ms-3">
+  <div class="col-12 m-2 ms-2">
+    {{#with header}}
+    <p class="h2 mb-3">{{title}}</p>
+    {{#with button}}
+    <button class="btn btn-outline-secondary">{{text}}</button>
+    {{/with}}
+    {{/with}}
+  </div>
+<hr class="m-4" />
+</div>
+<div class="row ms-3">
+  <div class="col-12">
+   {{#each goodsBlock}}
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <img class="img-thumbnail" src="{{image}}" width="200" height="200" alt="">
+            </div>
+          <div class="col-3">
+            <p class="h4 text-center mt-3">{{name}}</p>
+            <p>{{description}}</p>
+          </div>
+          <div class="col-2">
+            <p class="text-center mt-5">{{price.title}}</p>
+            <p class="text-center">{{price.value}}</p>
+          </div>
+          <div class="col-2">
+            <p class="text-center mt-5">{{amount}}</p>  
+          </div>
+          <div class="col-2">
+            {{#each buttons}}
+            {{#if isPrimary}}
+            <button class="btn btn-info mt-3 mb-5">{{text}}</button>
+            {{/if}}
+            {{#if isDanger}}
+            <button class="btn btn-danger">{{text}}</button>
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+     
+      </div>
+    </div>
+{{/each}}
+  </div>
+ <hr class="m-4" /> 
+</div>
+{{#with total}}
+<div class="row ms-5">
+<div clas="col-12">
+  <p class="display-5 mb-3">{{title}}</p>
+  <p class="display-4">{{amount}}</p>
+  <p class="text-muted">{{delivery}}</p>
+  <div class="row">
+    {{#each buttons}}
+    <div class="col-8 mt-3">
+      {{#if isOutline}}
+      <button class="btn btn-outline-success" href="{{link}}">{{text}}</button>
+      {{/if}}
+    </div>
+    <div class="col-8">
+      {{#if isSuccess}}
+      <button class="btn btn-success" href="{{link}}">{{text}}</button>
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
+</div>
+<hr class="m-4" /> 
+</div>
+{{/with}}
+<div class="row ms-5">
+  <div class="col-12">
+    {{#with goodsOtherBlock}}
+    <div class="row">
+   <p class="h4 text-center m-2 mb-4">{{title}}</p>
+   {{#each cards}}
+   <div class="col-4">
+    <div class="card">
+      <img class="img-top" src="{{image}}">
+      <div class="card-header ms-4">{{title}}
+        {{#if isHot includeZero=true}}
+                  <span class="badge text-bg-warning">HOT</span>
+                {{/if}}                
+                {{#if idNew includeZero=true}}
+                  <span class="badge text-bg-info">NEW</span>
+                {{/if}} 
+      </div>
+      <div class="card-body">{{description}}</div>
+    </div>
+   </div>
+      {{/each}}
+    {{/with}}
+    </div>
+  </div>
+</div>
+<div class="row ms-5">
+  <div class="col-12 mt-5 mb-5">
+    <hr class="m-4" /> 
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+      <div class="card-body">
+<p class="h2">{{header}}</p>
+<p>{{description}}</p>
+{{#each buttons}}
+<div class="col-4 m-3"><button class="btn btn-info" href="{{link}}">{{text}}</button></div>
+{{/each}}
+      </div>
+    </div>
+    {{/with}}
+    <hr class="m-4" /> 
+  </div>
+</div>
+<div class="row ms-5">
+  <div class="col-10">
+    <div class="row">
+      <div class="nav">
+        {{#each footer}}
+          <div class="col-2">
+            {{#each this}}      
+              <div class="nav-item">
+                <a href="{{link}}" class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
+              </div>
+             {{/each}}
+           </div>
+    
+      {{/each}}
+      </div>
+      <hr class="m-4" /> 
+    </div>
+  </div>
+  
+</div>
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
