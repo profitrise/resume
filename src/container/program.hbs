@@ -3,62 +3,66 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+<div class="row m-2 ms-4 p-3">
   <section>
-
-    {{#with program}}
-      {{#with excursion}}
-      <h1>{{> title data="Program"}}</h1>
-
-        <h2><b>Name:</b>{{name}}</h2>
-        <p><b>Location:</b>{{location.city}}
-          {{location.country}}</p>
-        <data>Date:</b>{{date}}</data>
-        <div>
-          <h2>{{> title data="Program excursion:"}}</h2>
-          {{#each program}}
-              <p><b>Name:</b>{{name}}</p>
-              <p><b>Type:</b>{{type}}</p>
-              <p><b>Duration:</b>{{duration}}</p>
-            {{#with details}}
-               {{#with museum}}
-               <p><b>Name:</b>{{name}} Address:{{location.address}} {{location.city}} {{location.country}}</p>
-               <div>
-                {{#each exhibits}}
-                <ul>
-                  <li><b>{{name}}</b></li>
-                  <li>Artist:{{#if artist}} {{artist}} {{else}} not {{/if}}</li>
-                  <li>Description:{{description}}</li>
-                  <li>{{#if audio_guide}} (Audio guide) {{/if}}</li>
-                  </ul>
-                {{/each}}
-               </div>
-               {{/with}}
-              <div>       
-                {{#with venue}}
-                 <p><b>Name:</b> {{name}}</p>
-                 <p><b>Address:</b> {{location.address}} {{location.city}} {{location.country}}</p>
-                 {{/with}}
-              </div> 
-               <div>
-                <ol>
-                  {{#each performers}}
-                  <li>{{name}}</li>
-                  <li> {{type}}</li>
-                  {{/each}}
-                </ol>
-               </div>
-               <div>
-                {{#with guide}}
-                <p>Name:{{name}} Language:{{language}} Rating:({{rating}})</p>
+    <div class="card p-5">
+      <div class="card-header p-3">
+        {{#with program}}
+          {{#with excursion}}
+          <h1>{{> title data="Program"}}</h1>
+            <h2><b>Name:</b>{{name}}</h2>
+            <p><b>Location:</b>{{location.city}}
+              {{location.country}}</p>
+            <data>Date:</b>{{date}}</data>
+      </div>
+          <div class="card-body">
+            <div>
+              <h2>{{> title data="Program excursion:"}}</h2>
+              {{#each program}}
+                  <p><b>Name:</b>{{name}}</p>
+                  <p><b>Type:</b>{{type}}</p>
+                  <p><b>Duration:</b>{{duration}}</p>
+                {{#with details}}
+                   {{#with museum}}
+                   <p><b>Name:</b>{{name}} Address:{{location.address}} {{location.city}} {{location.country}}</p>
+                   </div>
+             <div>
+                    {{#each exhibits}}
+                    <ul>
+                      <li><b>{{name}}</b></li>
+                      <li>Artist:{{#if artist}} {{artist}} {{else}} not {{/if}}</li>
+                      <li>Description:{{description}}</li>
+                      <li>{{#if audio_guide}} (Audio guide) {{/if}}</li>
+                      </ul>
+                    {{/each}}
+                   </div>
+                   {{/with}}
+                  <div>
+                    {{#with venue}}
+                     <p><b>Name:</b> {{name}}</p>
+                     <p><b>Address:</b> {{location.address}} {{location.city}} {{location.country}}</p>
+                     {{/with}}
+                  </div>
+                   <div>
+                    <ol>
+                      {{#each performers}}
+                      <li>{{name}}</li>
+                      <li> {{type}}</li>
+                      {{/each}}
+                    </ol>
+                   </div>
+                   <div>
+                    {{#with guide}}
+                    <p>Name:{{name}} Language:{{language}} Rating:({{rating}})</p>
+                    {{/with}}
+                   </div>
                 {{/with}}
-               </div>
+              {{/each}}
+              </div>
             {{/with}}
-          {{/each}}
+                  {{/with}}
           </div>
-        </div>
-      {{/with}}
-    {{/with}}
+    </div>
   </section>
 </div>
 

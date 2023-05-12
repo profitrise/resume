@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+<div class="row ms-3 m-2 p-3">
   <section>
     {{#with person}}
       <h1>{{name}}</h1>
@@ -50,6 +50,7 @@
                 <p><b>Status:</b>{{status}}</p>
                 <br>
                 </section>
+                 <hr class="mt-3 mb-4" /> 
               <section>
                 {{#each teams}}
                 <ul>
@@ -88,8 +89,7 @@
           </section>
     {{/with}}
   </section>
-  <hr>
-  <br>  
+  <hr class="mt-3 mb-4" />  
 </div>
 
 {{!-- 

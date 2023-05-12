@@ -2,7 +2,7 @@
 Це код container файлу для summary сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
-<div>
+<div class="row m-4 p-4">
 <h1>{{> title data="Car"}}</h1>
 <div>Model auto:{{make}} {{model}} {{year}} {{color}}</div>
 <div>{{#with features}}
@@ -22,6 +22,7 @@
          {{/with}}
          <div>
     {{#with audio}}
+    <hr class="mt-2 mb-2" />
     <h3>Audio system</h3>
     <li>{{system}}</li>
     <li>{{speakers}}</li>
@@ -33,6 +34,7 @@
          {{/with}}
         </ul>
         <div>
+            <hr class="mt-2 mb-2" />
     <ul>
         <h3>Exterior</h3>
         {{#with exterior}}
@@ -50,28 +52,31 @@
         {{/with}}
     </ul>
  </div>
- <div>
+ <div class="row ms-3 m-3">
+    <hr class="mt-2 mb-2" />
     <h4>Safety</h4>
     {{#with safety}}
     {{#with airbags}}
     <p>Front:{{front}} side:{{side}} Knee:{{knee}} rear:{{rear}}</p>
     {{/with}}
-    <div>
+    </div>
+    <div class="row ms-1 m-2">
         <h4>Assistance</h4>
         <ul>
           {{#with assistance}}
         <li>Blind spot monitoring:{{#if blind_spot_monitoring}} в наявності {{/if}}</li>
          <li>Rear cross traffic alert:{{#if rear_cross_traffic_alert}} в наявності {{/if}}</li>
-          <li>Lane departure warning:{{#if lane_departure_warning}} в наявності {{/if}}</li>
-           <li>Adaptive cruise control:{{#if adaptive_cruise_control}} в наявності {{/if}}</li>
-            <li>Collision warning:{{#if collision_warning}} в наявності {{/if}}</li>
+        <li>Lane departure warning:{{#if lane_departure_warning}} в наявності {{/if}}</li>
+        <li>Adaptive cruise control:{{#if adaptive_cruise_control}} в наявності {{/if}}</li>
+        <li>Collision warning:{{#if collision_warning}} в наявності {{/if}}</li>
         {{/with}}
     </ul>
  </div>
     {{/with}}
- </div>
+ 
      {{/with}}
      <div>
+        <hr class="mt-2 mb-2" />
         <h4>Engine</h4>
         <ul>
             {{#with engine}}
@@ -84,12 +89,14 @@
         </ul>
      </div>
      <div>
+        <hr class="mt-2 mb-2" />
         <h4>Fuel economy</h4>
         {{#with fuel_economy}}
         <p><b>city:</b>{{city}} <b>highway:</b>{{highway}} <b>combined:</b>{{combined}}</p>
         {{/with}}
      </div>
-     <di>
+     <div>
+        <hr class="mt-2 mb-2" />
         <ul>
             <h4>Price</h4>
             {{#with price}}
@@ -105,6 +112,7 @@
          </ul>
      </di>
      </div>
+     <hr class="mt-2 mb-2" />
 </div>
 
 {{!-- 

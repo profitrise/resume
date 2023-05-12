@@ -4,20 +4,23 @@
 }}
 
   <header>
-    <div class='card'>
-      <div class='nav'>
-        {{#with navigation}}
+    <div class='row'>
+       {{#with navigation}}
+      <div class='card'>
+        <div class='nav'>
           {{#each links}}
             <div class='nav-item'>
-              <a href='{{href}}' class='nav-link'>{{text}}</a>
+              <a
+                class='nav-link'
+                href='{{href}}'
+              >{{text}}</a>
             </div>
           {{/each}}
-          <div class='nav-item pt-2 ps-3'><a
-              href='#'
-              class='nav-item-disabled'
+          <div class='nav-item-disabled pt-2 ps-3'
             >Disabled</a></div>
-        {{/with}}
+        </div>
       </div>
+    {{/with}}
     </div>
   </header>
   <main>
@@ -85,12 +88,12 @@
                         {{/with}}
                     <hr class="m-3" />
                     {{#each switch}}
-                        <div class='form-check form-switch m-4 {{#if isActive}} active {{/if}}'>
+                        <div class='form-check form-switch m-4 ms-2'>
                           <label class='form-check-lable'>{{text}}</label>
                           <input
                             type='checkbox'
                             class='form-check-input'
-                          />
+                          />                          
                           </div>
                     {{/each}}
                    {{/with}}
@@ -134,7 +137,7 @@
                        {{/each}}
                      {{#each button}}
                       {{#if isPrimary}}
-                     <button class="btn btn-info">{{text}}</button>
+                     <button class="btn btn-info mb-3">{{text}}</button>
                                 {{/if}}
                        {{#if isOutline}} <button class="btn btn-outline-info">{{text}}</button> {{/if}}
                       {{/each}}
@@ -148,7 +151,7 @@
      </div>
    </main>
      <section>
-        <div class="row">
+        <div class="row ms-3">
           <div class="col-8">
             {{#with delivery}}
             <div class="card">
@@ -175,7 +178,7 @@
   </div>
     
     <section>
-      <div class="col-12 m-2">
+      <div class="col-12 m-2 ms-5">
         {{#each delivery_type}}
         <div class="form-check">
           <label class="form-check-label">{{type}}</label>
@@ -185,7 +188,7 @@
       </div>
     </section>
     <hr class="m-3" />
-    <div>
+    <div class="row ms-5">
       {{#with payment}}
       <p class="display-5 ms-3">{{title}}</p>
       {{#each list}}
@@ -200,7 +203,7 @@
       {{/with}}
     </div>
      <hr class="m-3" />
-     <div class="col-12">
+     <div class="col-12 ms-5">
       {{#with contact}}
        <div class="row g-3">
          <div class='col-4'>
@@ -226,7 +229,7 @@
                      <div class='form-text'>{{name.caption}}</div>
                 </div>
        </div>
-            </div>
+            
                 <div class='row g-3'>
                   <div class='col-4'>
                     <label
@@ -250,8 +253,9 @@
                   </div>
       {{/with}}
      </div>
+     </div>
       <hr class="m-3" />
-      <div class="col-6">
+      <div class="col-6 ms-5">
         <p class="m-3">{{coment.label}}</p>
        <div class="col-6 m-3">
          <input
@@ -263,7 +267,7 @@
       </div>
       {{/with}}
      <section>
-      <div class="col-6 m-2">
+      <div class="col-6 m-2 ms-5">
         {{#with coupon}}
         {{#with select}}
         {{#with availabel_coupon}}
@@ -307,12 +311,10 @@
       <hr class="mb-4 mt-4" />
         </div>
         {{/with}}
-      </div>
-      
-      
+      </div>     
      </section> 
      <section>
-      <div class="col-6 m-2">
+      <div class="col-6 m-2 ms-5">
         <div class="row m-2">
           {{#with quiz}}
           <p class="display-6">{{title}}</p>

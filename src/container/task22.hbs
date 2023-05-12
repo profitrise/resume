@@ -3,8 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
-
+<div class="row p-3 ms-3 m-2 mt-3">
   {{#with page_header}}
     <h1>
       <p class='text-center'>{{title}}</p>
@@ -13,7 +12,7 @@
       class='text-uppercase text-center'
     >{{description}}</p>
   {{/with}}
-  <div class='card'>
+  <div class='card mb-4'>
     <div class='card-body'>
 
       {{#with section}}
@@ -31,9 +30,8 @@
         {{/with}}
          </div>
          </div>
-         <br>
 
-        <div class='card'>
+        <div class='card mb-4'>
           <div class='card-body'>
             {{#with advantage}}
             <p class="display-5">{{title}}</p>
